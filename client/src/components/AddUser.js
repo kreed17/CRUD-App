@@ -65,7 +65,7 @@ class AddUser extends Component {
             city: this.state.city        
         }
         console.log(userAdd)
-        axios.post('http://localhost:4000/api/users/add', userAdd)
+        axios.post('http://localhost:8000/api/v1/users/', userAdd)
         .then(res => { 
             console.log(res);
             this.setState({ redirect: this.state.redirect === false });

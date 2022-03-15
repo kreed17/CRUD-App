@@ -12,7 +12,7 @@ class Users extends Component {
       }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/api/users')
+        axios.get('http://localhost:8000/api/v1/users')
         .then(res => {
             console.log(res);
             this.setState({ users: res.data })
@@ -30,14 +30,15 @@ class Users extends Component {
                 {data.length > 0 ? 
                     data.map((user, i) => {                        
                         return (
-                            <div className="col-lg-6" key={user._id.toString()}>
+                           
+                            <div className="col-lg-6" key={user.id}>
                                 <div className="card" style={{ marginBottom: "20px"}}>
                                     <div className="card-header text-left">{user.name}</div>
                                     <div className="card-body text-left">
                                         <div className="row">
                                             <div className="col-lg-3">
                                                 <img className="img-thumbnail" style={{marginBottom: "10px"}} src={userImg} alt="user"/><br/>
-                                                <Link to={"users/"+user._id}>
+                                                <Link to={"users/"+user.id}>
                                                     <button className="btn btn-outline-dark btn-sm">View User</button>
                                                 </Link>
                                             </div>   
