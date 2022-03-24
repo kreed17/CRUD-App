@@ -1,12 +1,9 @@
 package com.kamron.crudapp.model;
 
-import javax.annotation.Generated;
 
 import org.springframework.data.annotation.Id;
 
-// import javax.persistence.Entity;
-// import javax.persistence.GeneratedValue;
-// import javax.persistence.Id;
+
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
