@@ -26,7 +26,7 @@ class EditUser extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:4000/api/users/${this.props.match.params.id}`)
+    axios.get(`http://localhost:8000/api/v1/users/${this.props.match.params.id}`)
     .then(res => {
         this.setState({ 
             name: res.data.name,
@@ -81,7 +81,7 @@ class EditUser extends Component {
         city: this.state.city  
     }
     console.log(userUpdate)
-    axios.post(`http://localhost:4000/api/users/update/${this.props.match.params.id}`, userUpdate)
+    axios.post(`http://localhost:8000/api/v1/users/${this.props.match.params.id}`, userUpdate)
     .then(res => { 
         console.log(res);
         this.setState({ redirect: this.state.redirect === false })

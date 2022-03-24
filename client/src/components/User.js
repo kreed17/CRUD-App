@@ -15,7 +15,7 @@ class User extends Component {
   }
 
   componentDidMount() {
-      axios.get(`http://localhost:4000/api/users/${this.props.match.params.id}`)
+      axios.get(`http://localhost:8000/api/v1/users/${this.props.match.params.id}`)
       .then(res => {
         console.log(res)
           this.setState({ user: res.data })
@@ -24,8 +24,8 @@ class User extends Component {
 
   deleteUser(event) {
     event.preventDefault();
-    console.log(this.state.user._id)
-    axios.post(`http://localhost:4000/api/users/delete/${this.state.user._id}`)
+    console.log(this.state.user.id)
+    axios.delete(`http://localhost:8000/api/v1/users/${this.state.user.id}`)
       .then(res => {
         console.log(res)
           this.setState({ redirect: this.state.redirect === false })
@@ -53,7 +53,7 @@ class User extends Component {
                 </div>                                        
                   <hr/>
                   <div className="row" style={{marginLeft: "0px"}}>
-                    <Link to={this.state.user._id+"/edit"}>
+                    <Link to={this.state.user.id+"/edit"}>
                       <button className="btn btn-primary">Edit user</button>
                     </Link>                  
                     <form onSubmit={this.deleteUser}>
