@@ -5,7 +5,8 @@ target/
 !**/src/test/**/target/
 
 src/main/resources/application.properties
-
+CRUD-App/crud-app/src/main/resources/application.properties
+*.properties
 ### STS ###
 .apt_generated
 .classpath
