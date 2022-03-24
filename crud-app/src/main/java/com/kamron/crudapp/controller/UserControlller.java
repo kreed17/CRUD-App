@@ -78,16 +78,6 @@ public class UserControlller {
     public void deleteUser(@PathVariable String id ){
             
         userRepository.deleteById(id);
-
- 
-    //   throws ResourceNotFoundException {
-    //      User user = userRepository.findById(userId)
-    //        .orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + userId));
-    
-    //      userRepository.delete(user);
-    //      Map<String, Boolean> response = new HashMap<>();
-    //      response.put("deleted", Boolean.TRUE);
-    //      return response;
     }
 
 }
